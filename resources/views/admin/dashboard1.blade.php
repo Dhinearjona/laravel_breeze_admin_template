@@ -1,7 +1,7 @@
 <x-app-layout>
     @include('layouts.navbar', [
         'name' => 'Dashboard 1',
-        'link' => route('admin_dashboard_1'),
+        'link' => route('admin.dashboard1'),
     ])
 
     <div class="overflow-x-auto w-11/12 mx-auto mt-5 bg-white shadow-lg rounded-lg p-5">

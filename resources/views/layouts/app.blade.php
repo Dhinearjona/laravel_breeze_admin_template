@@ -11,30 +11,24 @@
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
+    <link rel="canonical" href="https://themesberg.com/product/tailwind-css/dashboard-windster">
     <link href="https://cdn.datatables.net/2.1.8/css/dataTables.tailwindcss.css" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/shadcdn/+esm" rel="stylesheet" type="text/css" />
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="font-sans antialiased">
-    <div class="min-h-screen w-full">
-        <div class="flex">
-            <!-- Sidebar -->
-            <div class="hidden lg:block">
-                @include('layouts.navigation')
-            </div>
+<body class="font-sans bg-gray-50 antialiased">
+    @include('layouts.navigation')
 
-            <!-- Page Content -->
-            <main class="flex-1 overflow-y-auto transition-all duration-300 ml-64">
-                <div class="text-black p-6 w-full bg-gray-100 h-full rounded-lg">
-                    {{ $slot }}
-                </div>
-            </main>
-        </div>
+    <!-- Page Content -->
+    <div class="bg-gray-50 opacity-50 hidden fixed inset-0 z-10" id="sidebarBackdrop"></div>
+    <div id="main-content" class="h-full w-full bg-gray-50 relative overflow-y-auto">
+        {{ $slot }}
     </div>
 
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
